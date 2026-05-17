@@ -5,6 +5,7 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "moduleResolution": "bundler",
+    "ignoreDeprecations": "5.0",
     "esModuleInterop": true,
     "strict": true
   }

@@ -9,7 +9,7 @@ import userRoutes from "./routes/user.routes";
 import tandasRoutes from "./routes/tandas.routes";
 import pagosRoutes from "./routes/pagos.routes";
 
-const app = express(); 
+const app = express();
 
 app.use(cors());
 app.use(express.json());
@@ -21,11 +21,10 @@ app.use("/api", userRoutes);
 app.use("/api/tandas", tandasRoutes);
 app.use("/api", pagosRoutes);
 
+// ✅ Puerto dinámico para Render
+const PORT = process.env.PORT || 3000;
 
-
-app.listen(3000, () => {
-  console.log("Servidor ejecutándose en puerto 3000");
+app.listen(PORT, () => {
+  console.log(`Servidor ejecutándose en puerto ${PORT}`);
 });
-console.log("URL:", process.env.SUPABASE_URL);
-console.log("ANON:", process.env.SUPABASE_ANON_KEY?.slice(0, 20));
-console.log("SERVICE:", process.env.SUPABASE_SERVICE_ROLE_KEY?.slice(0, 20));
+
