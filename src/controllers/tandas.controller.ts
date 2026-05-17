@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import {joinTandaByCode,createTanda,joinTanda,addUserToTanda,removeParticipanteService,
-  deleteTandaService,getMisTandas,getTandaByIdService,verificarCodigoTanda,getSolicitudes,aceptarSolicitud,rechazarSolicitud} from "../services/tandas.service";
+  deleteTandaService,getMisTandas,getTandaByIdService,verificarCodigoTanda,getSolicitudes,aceptarSolicitud,rechazarSolicitud} from "../services/tandas.service.js";
 
 
 export const createTandaController = async (req: any, res: Response) => {
@@ -65,7 +65,7 @@ export const addUserToTandaController = async (req: any, res: Response) => {
 export const removeParticipante = async (req: any, res: Response) => {
   try {
     const { tandaId, userId } = req.params;
-    const currentUserId = req.user.id; // 👈 agrega esto
+    const currentUserId = req.user.id; 
 
     const result = await removeParticipanteService(tandaId, userId, currentUserId);
 
@@ -113,8 +113,8 @@ export const getTandaByIdController = async (req: any, res: Response) => {
     const tandaId = req.params.id;
     const userId = req.user?.id;
 
-    console.log("TANDA ID:", tandaId); // 👈
-    console.log("USER ID:", userId);   // 👈
+    console.log("TANDA ID:", tandaId); 
+    console.log("USER ID:", userId);   
 
     if (!userId) {
       return res.status(401).json({ error: "Usuario no autenticado" });
@@ -124,7 +124,7 @@ export const getTandaByIdController = async (req: any, res: Response) => {
 
     res.json(tanda);
   } catch (error: any) {
-    console.log("ERROR EN getTandaById:", error.message); // 👈
+    console.log("ERROR EN getTandaById:", error.message); // 
     res.status(400).json({
       error: error.message,
     });
@@ -179,7 +179,7 @@ export const getSolicitudesController = async (req: any, res: Response) => {
   try {
     const { tandaId } = req.params;
     const currentUserId = req.user.id;
-    console.log("GET SOLICITUDES - tandaId:", tandaId, "userId:", currentUserId); // 👈
+    console.log("GET SOLICITUDES - tandaId:", tandaId, "userId:", currentUserId); // 
     const solicitudes = await getSolicitudes(tandaId, currentUserId);
     res.json(solicitudes);
   } catch (error: any) {
@@ -194,7 +194,7 @@ export const aceptarSolicitudController = async (req: any, res: Response) => {
     const result = await aceptarSolicitud(tandaId, userId, currentUserId);
     res.json(result);
   } catch (error: any) {
-    console.log("ERROR SOLICITUDES:", error.message); // 👈
+    console.log("ERROR SOLICITUDES:", error.message); // 
     res.status(400).json({ error: error.message });
   }
 };

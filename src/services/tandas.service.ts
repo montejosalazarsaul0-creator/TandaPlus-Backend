@@ -1,4 +1,4 @@
-import { supabase,supabaseAdmin } from "../config/supabase";
+import { supabase,supabaseAdmin } from "../config/supabase.js";
 
 const generarCodigoInvitacion = () => {
   const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

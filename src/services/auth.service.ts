@@ -1,4 +1,4 @@
-import { supabaseAdmin,supabase } from "../config/supabase";
+import { supabaseAdmin,supabase } from "../config/supabase.js";
 
 
 

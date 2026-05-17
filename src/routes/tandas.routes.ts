@@ -1,15 +1,20 @@
 import { Router } from "express";
-import { authMiddleware } from "../middlewares/auth.middleware";
-import { authorize } from "../middlewares/role.middleware";
-import { createTandaController, getMisTandasController } from "../controllers/tandas.controller";
-import { joinTandaController } from "../controllers/tandas.controller";
-import { addUserToTandaController } from "../controllers/tandas.controller";
-import { removeParticipante } from "../controllers/tandas.controller";
-import { deleteTandaController } from "../controllers/tandas.controller";
-import { getTandaByIdController } from "../controllers/tandas.controller";
-import { joinByCodeController } from "../controllers/tandas.controller";
-import { verificarCodigoController } from "../controllers/tandas.controller"; 
-import { getSolicitudesController,aceptarSolicitudController,rechazarSolicitudController} from "../controllers/tandas.controller";
+import { authMiddleware } from "../middlewares/auth.middleware.js";
+import { authorize } from "../middlewares/role.middleware.js";
+import {
+  createTandaController,
+  getMisTandasController,
+  joinTandaController,
+  addUserToTandaController,
+  removeParticipante,
+  deleteTandaController,
+  getTandaByIdController,
+  joinByCodeController,
+  verificarCodigoController,
+  getSolicitudesController,
+  aceptarSolicitudController,
+  rechazarSolicitudController
+} from "../controllers/tandas.controller.js";
 
 const router = Router();
 

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { supabaseAdmin } from "../config/supabase"; // ← solo necesitas supabaseAdmin
+import { supabaseAdmin } from "../config/supabase.js"; 
 
 export const authMiddleware = async (
   req: Request & { user?: any },

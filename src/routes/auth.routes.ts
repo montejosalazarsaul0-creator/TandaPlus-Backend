@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { register, login } from '../controllers/auth.controller';
-import { getProfile } from '../controllers/auth.controller'
-import { authMiddleware } from '../middlewares/auth.middleware'
-import { savePushToken } from '../controllers/auth.controller';
+import { register, login } from '../controllers/auth.controller.js';
+import { getProfile } from '../controllers/auth.controller.js';
+import { authMiddleware } from '../middlewares/auth.middleware.js'
+import { savePushToken } from '../controllers/auth.controller.js';
 //import { authorize } from '../middlewares/role.middleware'
 
 

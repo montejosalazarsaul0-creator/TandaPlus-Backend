@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { registerUser, loginUser, getMyProfile } from "../services/auth.service";
-import { supabase, supabaseAdmin } from "../config/supabase"; 
+import { registerUser, loginUser, getMyProfile } from "../services/auth.service.js";
+import { supabase, supabaseAdmin } from "../config/supabase.js"; 
 /* ===============================
 REGISTER
 =============================== */
